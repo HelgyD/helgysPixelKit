@@ -1,0 +1,230 @@
+@import '../../common.css';
+.pixelButton {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.colorButton {
+  all: unset;
+  display: block;
+  background: transparent;
+  position: relative;
+  padding-left: 8px;
+  width: fit-content;
+  min-width: 40px;
+  min-height: 20px;
+  top: -4px;
+  padding-right: 8px;
+  border-top: solid 4px var(--border);
+  color: var(--text-color);
+  z-index: 2;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  cursor: pointer;
+}
+.colorButton:focus,
+.colorButton:focus-visible {
+  outline: none !important;
+}
+.colorButton:disabled {
+  border-top: solid 4px var(--border);
+  color: var(--text-color-disabled);
+}
+
+.colorButton::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -8px;
+  border-top: solid 4px var(--border);
+  border-bottom: solid 4px var(--button-primary-bright);
+  bottom: -8px;
+  left: 4px;
+  right: 4px;
+  background: var(--button-primary);
+  z-index: -1;
+}
+.colorButton:disabled::before {
+  border-top: solid 4px var(--border);
+  border-bottom: solid 4px var(--button-primary-disabled-bright);
+  background: var(--button-primary-disabled);
+}
+
+.colorButton::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-primary);
+  border-bottom: solid 4px var(--button-primary-bright);
+  border-top: solid 4px var(--border);
+
+  top: -12px;
+  bottom: -12px;
+  left: 8px;
+  right: 8px;
+  z-index: -1;
+}
+.colorButton:disabled::after {
+  background: var(--button-primary-disabled);
+  border-bottom: solid 4px var(--button-primary-disabled-bright);
+}
+
+.colorButton:active {
+  top: 0px;
+}
+.colorButton:disabled:active {
+  top: -4px;
+}
+
+.aroundColorButton {
+  display: inline-block;
+  position: relative;
+  min-width: fit-content;
+  background: var(--border);
+  border-bottom: var(--border) solid 12px;
+  top: -4px;
+  z-index: 5;
+}
+.aroundColorButton-disabled {
+  display: inline-block;
+  position: relative;
+  min-height: fit-content;
+  min-width: fit-content;
+  width: fit-content;
+  background: var(--border);
+  border-bottom: var(--border) solid 12px;
+  top: -4px;
+  z-index: 2;
+}
+
+.aroundColorButton-disabled::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-primary-disabled-dark);
+  top: 12px;
+  bottom: -20px;
+  left: 8px;
+  border-bottom: var(--border) solid 4px;
+  right: 8px;
+  z-index: -1;
+}
+
+.aroundColorButton-disabled::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-primary-disabled-dark);
+  border-bottom: var(--border) solid 4px;
+  top: 12px;
+  bottom: -16px;
+  left: 4px;
+  right: 4px;
+  z-index: -1;
+}
+
+.aroundColorButton::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-primary-dark);
+  top: 12px;
+  bottom: -20px;
+  left: 8px;
+  border-bottom: var(--border) solid 4px;
+  right: 8px;
+  z-index: -1;
+}
+
+.aroundColorButton::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-primary-dark);
+  border-bottom: var(--border) solid 4px;
+  top: 12px;
+  bottom: -16px;
+  left: 4px;
+  right: 4px;
+  z-index: -1;
+}
+
+.buttonBaseTop {
+  display: inline-block;
+  position: relative;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: fit-content;
+
+  top: -4px;
+  background: var(--button-base-primary);
+  border-bottom: var(--border) solid 4px;
+  border-top: var(--border) solid 4px;
+  z-index: 2;
+}
+
+.buttonBaseTop::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-base-primary);
+  top: 8px;
+  bottom: -12px;
+  left: 8px;
+  border-bottom: var(--border) solid 4px;
+  right: 8px;
+  z-index: -1;
+}
+
+.buttonBaseTop::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-base-primary);
+  border-bottom: var(--border) solid 4px;
+  top: 4px;
+  bottom: -8px;
+  left: 4px;
+  right: 4px;
+  z-index: -1;
+}
+
+.buttonBase {
+  display: inline-block;
+  position: relative;
+  background: transparent;
+  min-height: fit-content;
+  width: fit-content;
+  padding-bottom: 4px;
+  border-left: var(--border) solid 4px;
+  border-right: var(--border) solid 4px;
+  z-index: 2;
+}
+
+.buttonBase::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-base-dark);
+  border-bottom: var(--border) solid 4px;
+  top: 8px;
+  bottom: -4px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.buttonBase::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--button-base-dark);
+  border-bottom: var(--border) solid 4px;
+  top: 8px;
+  bottom: -8px;
+  left: 4px;
+  right: 4px;
+  z-index: -1;
+}
