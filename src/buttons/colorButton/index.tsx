@@ -1,13 +1,9 @@
 import { ReactElement } from 'react';
 import './colorButton.css';
 import { adjustShade } from '../../helpers/colorConversion';
+import { BASE_COLORS } from '../../helpers/common';
 import type { CSSProperties } from 'react';
-const BASE_COLORS = {
-  primary: '#4faa85',
-  basePrimary: '#798186',
-  textColor: '#efcfa5',
-  borderColor: '#222034',
-};
+
 export const ColorButton: React.FC<{
   onClick?(): void;
   children?: ReactElement | string;
@@ -51,7 +47,7 @@ export const ColorButton: React.FC<{
   } as React.CSSProperties;
   return (
     <div className='pixelButton' style={cssVariables}>
-      <span className='buttonBase' style={style}>
+      <span className='buttonBase'>
         <span className='buttonBaseTop'>
           <span
             className={

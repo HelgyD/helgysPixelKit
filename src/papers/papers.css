@@ -1,0 +1,69 @@
+.paper {
+  padding: 16px;
+  background-color: var(--paper-color);
+  border: var(--border) 4px solid;
+  border-top: none;
+  left: 0px;
+  font-family: var(--font-family);
+}
+
+.paperTitle {
+  min-width: 40px;
+  margin-left: 32px;
+  padding-top: 8px;
+  padding-right: 8px;
+  position: relative;
+  text-align: right;
+  font-family: var(--font-family);
+  background-color: var(--paper-color);
+  border-right: var(--border) 4px solid;
+  border-top: var(--border) 4px solid;
+  z-index: 2;
+}
+.paperTitle::before {
+  content: '';
+  display: block;
+  position: absolute;
+  content: '';
+  top: 28px;
+  left: -32px;
+  height: 16px;
+  border-left: var(--border) 4px solid;
+  width: 40px;
+  right: 12px;
+  background-color: var(--paper-color);
+  z-index: 0;
+}
+
+.paperTitle::after {
+  content: '';
+  display: block;
+  position: absolute;
+
+  content: '';
+  top: -4px;
+  left: -4px;
+  height: 4px;
+  width: 4px;
+  right: 12px;
+  background-color: var(--border);
+  box-shadow: 0px 4px var(--paper-shade), 0px 8px var(--paper-shade),
+    0px 12px var(--paper-shade), 0px 16px var(--paper-shade),
+    0px 20px var(--paper-shade), 0px 24px var(--paper-shade),
+    -4px 4px var(--border), -8px 4px var(--border), -12px 8px var(--border),
+    -16px 12px var(--border), -20px 16px var(--border), -24px 20px var(--border),
+    -24px 24px var(--border), -28px 28px var(--border),
+    -24px 28px var(--paper-shade), -20px 28px var(--paper-shade),
+    -16px 28px var(--paper-shade), -12px 28px var(--paper-shade),
+    -8px 28px var(--paper-shade), -4px 28px var(--paper-shade),
+    0px 28px var(--paper-color), -4px 8px var(--border), -4px 12px var(--border),
+    -4px 16px var(--border), -4px 20px var(--border), -4px 24px var(--border),
+    -4px 24px var(--border), -8px 24px var(--border), -12px 24px var(--border),
+    -16px 24px var(--border), -20px 24px var(--border),
+    -8px 20px var(--paper-color), -12px 20px var(--paper-color),
+    -16px 20px var(--paper-color), -20px 20px var(--paper-color),
+    -8px 16px var(--paper-color), -12px 16px var(--paper-color),
+    -16px 16px var(--paper-color), -8px 12px var(--paper-color),
+    -12px 12px var(--paper-color), -8px 8px var(--paper-color);
+  z-index: 0;
+}
