@@ -62,22 +62,16 @@ function hueToRgb(p: number, q: number, t: number): number {
   return p;
 }
 
-export function adjustShade(color: string, adjustment: number): string {
+export function adjustShade(
+  color: string,
+  lDelta: number,
+  sDelta: number = lDelta
+): string {
   const match = color.match(/\w\w/g)?.map((c) => parseInt(c, 16)) || [0, 0, 0];
   let [r = 0, g = 0, b = 0] = match;
   let [h, s, l] = rgbToHsl(r, g, b);
-  l = Math.min(Math.max(l + adjustment, 0), 1); // Keep within [0, 1]
-  s = Math.min(Math.max(s + adjustment, 0), 1);
-  const [newR, newG, newB] = hslToRgb(h / 360, s, l);
-  return `rgb(${newR}, ${newG}, ${newB})`;
-}
-
-export function adjustLuminance(color: string, adjustment: number): string {
-  const match = color.match(/\w\w/g)?.map((c) => parseInt(c, 16)) || [0, 0, 0];
-  let [r = 0, g = 0, b = 0] = match;
-  let [h, s, l] = rgbToHsl(r, g, b);
-  l = Math.min(Math.max(l + adjustment, 0), 1); // Keep within [0, 1]
-  s = Math.min(Math.max(s, 0), 1);
+  l = Math.min(Math.max(l + lDelta, 0), 1); // Keep within [0, 1]
+  s = Math.min(Math.max(s + sDelta, 0), 1);
   const [newR, newG, newB] = hslToRgb(h / 360, s, l);
   return `rgb(${newR}, ${newG}, ${newB})`;
 }
