@@ -1,19 +1,38 @@
 {
-  "name": "helgysPixelKit",
+  "name": "helgyspixelkit",
   "version": "0.0.1",
   "description": "pixel art styled UI kit",
-  "main": "index.js",
   "repository": "https://github.com/HelgyD/pixelKit",
   "author": "HelgyD",
   "license": "MIT",
   "private": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepack": "yarn build",
+    "prepare": "yarn build"
+  },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "typescript": "^5.9.3"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3"
+    "@types/react": "^18 || ^19",
+    "@types/react-dom": "^18 || ^19",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
